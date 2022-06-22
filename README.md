@@ -32,3 +32,10 @@ docker_image = <hub-user>/<repo-name>[:<tag>] #Put "yicldcvr/azure-demo:latest" 
 
 4. Run `terraform init` then `terraform apply`, accept the prompt to proceed after verifying the changes.
 
+5. To view the webpage, first find out the public IP which is used by Application gateway.
+
+6. Let's create an user first. Run `curl -d "name=alice&email=alice@example.com" -X POST http://<IP of your application gateway>/users/` to create a user with name `alice` and email `alice@example.com`. The response would looks like 
+`User added with ID: <ID>`
+
+7. Now goes to browsers and open the page `http://<IP of your application gateway>/users/<ID>`, you should see the the created user now.
+
